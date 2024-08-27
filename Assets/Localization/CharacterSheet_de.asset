@@ -1,0 +1,427 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: CharacterSheet_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: b187bb7582c01894e86194cd650eee71, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 3474713391104
+    m_Localized: Fliegen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4183940837376
+    m_Localized: Zechen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4410047377408
+    m_Localized: Klettern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4642239852544
+    m_Localized: Tanzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4939754418176
+    m_Localized: Gaukelei
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4711714304000
+    m_Localized: Kraftakt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5103634264064
+    m_Localized: "Sinnessch\xE4rfe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5179668606976
+    m_Localized: Taschendiebstahl
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5265899302912
+    m_Localized: Reiten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5306735046656
+    m_Localized: Selbstbeherrschung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5441955213312
+    m_Localized: Singen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5482975506432
+    m_Localized: Verbergen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5536599683072
+    m_Localized: Schwimmen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5676001570816
+    m_Localized: Menschenkenntnis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5698063609856
+    m_Localized: Etikette
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5632053653504
+    m_Localized: Verkleiden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5754409889792
+    m_Localized: "Einsch\xFCchtern"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5728325513216
+    m_Localized: "\xDCberreden"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5779596685312
+    m_Localized: "Bekehren & \xDCberzeugen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5803751682048
+    m_Localized: "Bet\xF6ren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5831673163776
+    m_Localized: Gassenwissen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5868155219968
+    m_Localized: Willenskraft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5905723600896
+    m_Localized: Tierkunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5926049198080
+    m_Localized: Fischen & Angeln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5947905716224
+    m_Localized: Orientierung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5976972242944
+    m_Localized: Pflanzenkunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6010396651520
+    m_Localized: Fesseln
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6026993512448
+    m_Localized: Wildnisleben
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6050527752192
+    m_Localized: "F\xE4hrtensuche"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7468001177600
+    m_Localized: "K\xF6rperbeherrschung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348019917836288
+    m_Localized: Sternkunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348107671064576
+    m_Localized: "Bett- & Gl\xFCcksspiel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348193104842752
+    m_Localized: Geographie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348247005843456
+    m_Localized: Geschichtswissen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348307634507776
+    m_Localized: Rechtskunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348378895732736
+    m_Localized: Magiekunde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348432243085312
+    m_Localized: Rechnen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348476065173504
+    m_Localized: Mechanik
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348528951152640
+    m_Localized: Sagen & Legenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348631455748096
+    m_Localized: "G\xF6tter & Kulte"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348736380456960
+    m_Localized: "Sph\xE4renkunde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348804852469760
+    m_Localized: Kriegskunst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348858040438784
+    m_Localized: Alchimie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175348922754355200
+    m_Localized: Malen & Zeichnen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349211788038144
+    m_Localized: Stoffbearbeitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349280805310464
+    m_Localized: Handel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349340729331712
+    m_Localized: Fahrzeuge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349393556590592
+    m_Localized: Steinbearbeitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349635320467456
+    m_Localized: Lederbearbeitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349710801162240
+    m_Localized: Metallbearbeitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349848701489152
+    m_Localized: Musizieren
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349918003974144
+    m_Localized: "Schl\xF6sserknacken"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175349994407415808
+    m_Localized: Lebensmittelbearbeitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175350059733700608
+    m_Localized: Boote & Schiffe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175350128671281152
+    m_Localized: Heilkunde Krankheiten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175350237412806656
+    m_Localized: Heilkunde Gift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175350340424912896
+    m_Localized: Heilkunde Seele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175350404337717248
+    m_Localized: Heilkunde Wunden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175350490434195456
+    m_Localized: Holzbearbeitung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362371781742592
+    m_Localized: Mut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362467919384576
+    m_Localized: Klugheit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362591118675968
+    m_Localized: Intuition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362671791919104
+    m_Localized: Charisma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362747054510080
+    m_Localized: Fingerfertigkeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362811458048000
+    m_Localized: Gewandheit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362894966640640
+    m_Localized: Konstitution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175362957772148736
+    m_Localized: "K\xF6rperkraft"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363020636377088
+    m_Localized: MU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363073056788480
+    m_Localized: KL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363201326993408
+    m_Localized: IN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363279030669312
+    m_Localized: CH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363338493317120
+    m_Localized: FF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363402678751232
+    m_Localized: GE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363513773281280
+    m_Localized: KO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 175363587274264576
+    m_Localized: KK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176090770062004224
+    m_Localized: Schwerter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176090911179362304
+    m_Localized: "Armbr\xFCste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176090997133234176
+    m_Localized: "B\xF6gen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091048970637312
+    m_Localized: Dolche
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091085108760576
+    m_Localized: Fechtwaffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091157506641920
+    m_Localized: Hiebwaffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091206286397440
+    m_Localized: Kettenwaffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091429574365184
+    m_Localized: Lanzen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091495257165824
+    m_Localized: Raufen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091533601492992
+    m_Localized: Schilde
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091608721477632
+    m_Localized: Stangenwaffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091678510501888
+    m_Localized: Wurfwaffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091769581424640
+    m_Localized: Zweihandhiebwaffen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 176091873952485376
+    m_Localized: Zweihandschwerter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011217792323584
+    m_Localized: Seelenkraft
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011287157723136
+    m_Localized: "Z\xE4higkeit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011329826377728
+    m_Localized: Ausweichen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011370167193600
+    m_Localized: Lebensenergie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011460214706176
+    m_Localized: Geschwindigkeit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011520302305280
+    m_Localized: Initiative
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011591219597312
+    m_Localized: SK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011752868073472
+    m_Localized: ZK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011847713869824
+    m_Localized: INI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 177011905423298560
+    m_Localized: AW
+    m_Metadata:
+      m_Items: []
+  - m_Id: 193799965368471552
+    m_Localized: Steigerungswert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 193800120494804992
+    m_Localized: Besch
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

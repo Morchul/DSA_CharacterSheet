@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/UI%20Toolkit/CharacterContainer/CharacterContainer.uss?fileID=7433441132597879392&amp;guid=b3d008592c907ee419da347a079692a5&amp;type=3#CharacterContainer" />
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="top_bar" class="top-bar">
+            <ui:Button text="Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" class="top-bar-button" />
+            <ui:Button text="Character" parse-escape-sequences="true" display-tooltip-when-elided="true" class="top-bar-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

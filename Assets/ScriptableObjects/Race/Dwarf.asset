@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d8350b2f9ab8d14fb4dc0540b93c63f, type: 3}
+  m_Name: Dwarf
+  m_EditorClassIdentifier: 
+  Name:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  ID: 4
+  LifePointBase: 8
+  SpiritBase: -4
+  ToughnessBase: -4
+  MovementBase: 6
+  AndModification:
+  - AttributeType: 225
+    Modifier: 1
+  - AttributeType: 257
+    Modifier: 1
+  OrModification:
+  - AttributeType: 129
+    Modifier: -2
+  - AttributeType: 193
+    Modifier: -2
+  references:
+    version: 2
+    RefIds: []
