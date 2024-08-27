@@ -23,5 +23,13 @@ namespace DSA.Character.Modifier
             return race.ToughnessBase + MathUtility.DivideBySix(2 * constitution.Value.CurrentValue + strength.Value.CurrentValue);
         }
     }
+
+    public class ToughnessCalculationFactory : IBaseValueBaseCalculationFactory
+    {
+        public IBaseModifier Create(BaseValue baseValue)
+        {
+            return new ToughnessCalculation(baseValue);
+        }
+    }
 }
 

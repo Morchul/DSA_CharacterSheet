@@ -1,5 +1,4 @@
 using DSA.Character.Value;
-using DSA.Character.Value.Calculation;
 
 namespace DSA.Character.Modifier
 {
@@ -25,6 +24,14 @@ namespace DSA.Character.Modifier
         protected override int BaseCalculationMethod()
         {
             return race.SpiritBase + MathUtility.DivideBySix(courage.Value.CurrentValue + sagacity.Value.CurrentValue + intuition.Value.CurrentValue);
+        }
+    }
+
+    public class SpiritCalculationFactory : IBaseValueBaseCalculationFactory
+    {
+        public IBaseModifier Create(BaseValue baseValue)
+        {
+            return new SpiritCalculation(baseValue);
         }
     }
 }

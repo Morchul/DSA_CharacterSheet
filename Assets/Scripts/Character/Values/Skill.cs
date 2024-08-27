@@ -1,5 +1,5 @@
 using DSA.Character.Modifier;
-using static DSA.Character.Value.Data.SkillsDatabase;
+using static DSA.Character.Value.Data.SkillDatabase;
 
 namespace DSA.Character.Value
 {

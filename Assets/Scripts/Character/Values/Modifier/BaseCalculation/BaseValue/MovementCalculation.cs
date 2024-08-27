@@ -1,5 +1,4 @@
 using DSA.Character.Value;
-using DSA.Character.Value.Calculation;
 
 namespace DSA.Character.Modifier
 {
@@ -15,6 +14,14 @@ namespace DSA.Character.Modifier
         protected override int BaseCalculationMethod()
         {
             return race.MovementBase;
+        }
+    }
+
+    public class MovementCalculationFactory : IBaseValueBaseCalculationFactory
+    {
+        public IBaseModifier Create(BaseValue baseValue)
+        {
+            return new MovementCalculation(baseValue);
         }
     }
 }

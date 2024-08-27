@@ -21,5 +21,13 @@ namespace DSA.Character.Modifier
             return MathUtility.DivideByTwo(courage.Value.CurrentValue + agility.Value.CurrentValue);
         }
     }
+
+    public class InitiativeCalculationFactory : IBaseValueBaseCalculationFactory
+    {
+        public IBaseModifier Create(BaseValue baseValue)
+        {
+            return new InitiativeCalculation(baseValue);
+        }
+    }
 }
 

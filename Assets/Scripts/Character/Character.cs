@@ -1,10 +1,15 @@
 using DSA.Character.Advantage;
+using DSA.Character.Modifier;
 using DSA.Character.Value;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using static DSA.Character.Value.Data.BaseValueDatabase;
+using static DSA.Character.Value.Data.CombatTechnicDatabase;
+using static DSA.Character.Value.Data.CombatValueDatabase;
 using static DSA.Character.Value.Data.MainAttributeDatabase;
-using static DSA.Character.Value.Data.SkillsDatabase;
+using static DSA.Character.Value.Data.PoolValueDatabase;
+using static DSA.Character.Value.Data.SkillDatabase;
 
 namespace DSA.Character
 {
@@ -108,53 +113,54 @@ namespace DSA.Character
 
         private CombatTechnic[] GetCombatTechnicArray()
         {
-            CombatTechnic[] tmpCombatTechnicSet = parentObject.GetComponentsInChildren<CombatTechnic>();
-            CombatTechnic[] combatTechnicArray = new CombatTechnic[tmpCombatTechnicSet.Length];
-            for (int i = 0; i < tmpCombatTechnicSet.Length; ++i)
+            CombatTechnic[] combatTechnics = new CombatTechnic[CombatTechnicsData.Length];
+
+            for (int i = 0; i < combatTechnics.Length; ++i)
             {
-                tmpCombatTechnicSet[i].Bind(this);
-                combatTechnicArray[((int)tmpCombatTechnicSet[i].Data.Type).GetValueTypeArrayIndex()] = tmpCombatTechnicSet[i];
+                CombatTechnicData data = CombatTechnicsData[i];
+                combatTechnics[((int)data.Type).GetValueTypeArrayIndex()] = new CombatTechnic(this, data);
             }
-            return combatTechnicArray;
+
+            return combatTechnics;
         }
 
         private CombatValue[] GetCombatValueArray()
         {
-            CombatValue[] tmpCombatValueSet = parentObject.GetComponentsInChildren<CombatValue>();
-            CombatValue[] combatValueArray = new CombatValue[tmpCombatValueSet.Length];
-            for (int i = 0; i < tmpCombatValueSet.Length; ++i)
+            CombatValue[] combatValues = new CombatValue[CombatValuesData.Length];
+
+            for (int i = 0; i < combatValues.Length; ++i)
             {
-                tmpCombatValueSet[i].Bind(this);
-                combatValueArray[((int)tmpCombatValueSet[i].Data.Type).GetValueTypeArrayIndex()] = tmpCombatValueSet[i];
+                CombatValueData data = CombatValuesData[i];
+                combatValues[((int)data.Type).GetValueTypeArrayIndex()] = new CombatValue(this, data);
             }
 
-            return combatValueArray;
+            return combatValues;
         }
 
         private PoolValue[] GetPoolValueArray()
         {
-            PoolValue[] tmpPoolValues = parentObject.GetComponentsInChildren<PoolValue>();
-            PoolValue[] poolValueArray = new PoolValue[tmpPoolValues.Length];
-            for (int i = 0; i < tmpPoolValues.Length; ++i)
+            PoolValue[] poolValues = new PoolValue[PoolValuesData.Length];
+
+            for (int i = 0; i < poolValues.Length; ++i)
             {
-                tmpPoolValues[i].Bind(this);
-                poolValueArray[((int)tmpPoolValues[i].Data.Type).GetValueTypeArrayIndex()] = tmpPoolValues[i];
+                PoolValueData data = PoolValuesData[i];
+                poolValues[((int)data.Type).GetValueTypeArrayIndex()] = new PoolValue(this, data);
             }
 
-            return poolValueArray;
+            return poolValues;
         }
 
         private BaseValue[] GetBaseValueArray()
         {
-            BaseValue[] tmpBaseValues = parentObject.GetComponentsInChildren<BaseValue>();
-            BaseValue[] baseValueArray = new BaseValue[tmpBaseValues.Length];
-            for (int i = 0; i < tmpBaseValues.Length; ++i)
+            BaseValue[] poolValues = new BaseValue[BaseValuesData.Length];
+
+            for (int i = 0; i < poolValues.Length; ++i)
             {
-                tmpBaseValues[i].Bind(this);
-                baseValueArray[((int)tmpBaseValues[i].Data.Type).GetValueTypeArrayIndex()] = tmpBaseValues[i];
+                BaseValueData data = BaseValuesData[i];
+                poolValues[((int)data.Type).GetValueTypeArrayIndex()] = new BaseValue(this, data);
             }
 
-            return baseValueArray;
+            return poolValues;
         }
         #endregion
 

@@ -18,5 +18,13 @@ namespace DSA.Character.Modifier
             return MathUtility.DivideByTwo(agility.Value.CurrentValue);
         }
     }
+
+    public class DodgeCalculationFactory : IBaseValueBaseCalculationFactory
+    {
+        public IBaseModifier Create(BaseValue baseValue)
+        {
+            return new DodgeCalculation(baseValue);
+        }
+    }
 }
 

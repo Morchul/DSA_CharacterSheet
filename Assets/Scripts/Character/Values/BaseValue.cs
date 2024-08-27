@@ -1,8 +1,9 @@
+using DSA.Character.Modifier;
 using static DSA.Character.Value.Data.BaseValueDatabase;
 
 namespace DSA.Character.Value
 {
-    public abstract class BaseValue : CharacterValueBase
+    public class BaseValue : CharacterValueBase
     {
         public BaseValueData Data { get; }
 
@@ -13,12 +14,10 @@ namespace DSA.Character.Value
         {
             Data = data;
 
-            Value = Init();
+            Value = new Calculation.Value(Type, new IBaseModifier[] { data.BaseCalculationFactory.Create(this) });
 
             AttachLogCalculation();
         }
-
-        protected abstract Calculation.Value Init();
     }
 }
 
