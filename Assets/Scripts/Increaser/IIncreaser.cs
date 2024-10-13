@@ -3,8 +3,7 @@ using DSA.Character.Modifier;
 
 public interface IIncreaser
 {
-    public bool AllowEditOfAdvantages { get; }
-    public bool AllowFinishWithWarnings { get; }
+    public bool IsAllowed(IIncreaserPermissions increserPermissions);
 
     public event System.Action OnIncreaserUpdate;
 
@@ -21,6 +20,14 @@ public interface IIncreaser
 public interface IIncreaserFactory
 {
     public IIncreaser Create();
+}
+
+[System.Flags]
+public enum IIncreaserPermissions
+{
+    EditAdvantages = 1,
+    FinishWithWarnings = 1 << 1,
+    EditPersonalData = 1 << 2,
 }
 
 public struct IncreaseData

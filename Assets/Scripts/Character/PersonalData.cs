@@ -1,61 +1,77 @@
-using UnityEngine;
-
 namespace DSA.Character
 {
-    public class PersonalData : MonoBehaviour
+    public class PersonalData
     {
         public int ID => (int)CharacterDataIDs.PersonalData;
 
-        public string Name;
-        public Gender Gender;
-        public Race Race;
-        public string Culture;
-        public string Profession;
-        public SocialStanding SocialStanding;
-        public string PlaceOfBirth;
-        public string Famility;
-        public int Age;
-        public string BirthDay;
-        public string HairColor;
-        public string EyeColor;
-        public int Height;
-        public int Weight;
+        public ObservableValue<string> Name;
+        public ObservableValue<Gender> Gender;
+        public ObservableValue<Race> Race;
+        public ObservableValue<string> Culture;
+        public ObservableValue<string> Profession;
+        public ObservableValue<SocialStanding> SocialStanding;
+        public ObservableValue<string> PlaceOfBirth;
+        public ObservableValue<string> Famility;
+        public ObservableValue<int> Age;
+        public ObservableValue<string> BirthDay;
+        public ObservableValue<string> HairColor;
+        public ObservableValue<string> EyeColor;
+        public ObservableValue<int> Height;
+        public ObservableValue<int> Weight;
+
+        public PersonalData()
+        {
+            Name = new ObservableValue<string>();
+            Gender = new ObservableValue<Gender>();
+            Race = new ObservableValue<Race>();
+            Culture = new ObservableValue<string>();
+            Profession = new ObservableValue<string>();
+            SocialStanding = new ObservableValue<SocialStanding>();
+            PlaceOfBirth = new ObservableValue<string>();
+            Famility = new ObservableValue<string>();
+            Age = new ObservableValue<int>();
+            BirthDay = new ObservableValue<string>();
+            HairColor = new ObservableValue<string>();
+            EyeColor = new ObservableValue<string>();
+            Height = new ObservableValue<int>();
+            Weight = new ObservableValue<int>();
+        }
 
         public void ReadData(IFileReader fileReader)
         {
-            Name = fileReader.ReadString();
-            Gender = (Gender)fileReader.ReadInt();
+            Name.Value = fileReader.ReadString();
+            Gender.Value = (Gender)fileReader.ReadInt();
             int raceID = fileReader.ReadInt();
             //Race = GetRace(raceID);
-            Culture = fileReader.ReadString();
-            Profession = fileReader.ReadString();
-            SocialStanding = (SocialStanding)fileReader.ReadInt();
-            PlaceOfBirth = fileReader.ReadString();
-            Famility = fileReader.ReadString();
-            Age = fileReader.ReadInt();
-            BirthDay = fileReader.ReadString();
-            HairColor = fileReader.ReadString();
-            EyeColor = fileReader.ReadString();
-            Height = fileReader.ReadInt();
-            Weight = fileReader.ReadInt();
+            Culture.Value = fileReader.ReadString();
+            Profession.Value = fileReader.ReadString();
+            SocialStanding.Value = (SocialStanding)fileReader.ReadInt();
+            PlaceOfBirth.Value = fileReader.ReadString();
+            Famility.Value = fileReader.ReadString();
+            Age.Value = fileReader.ReadInt();
+            BirthDay.Value = fileReader.ReadString();
+            HairColor.Value = fileReader.ReadString();
+            EyeColor.Value = fileReader.ReadString();
+            Height.Value = fileReader.ReadInt();
+            Weight.Value = fileReader.ReadInt();
         }
 
         public void WriteData(IFileWriter fileWriter)
         {
-            fileWriter.Write(Name);
-            fileWriter.Write((int)Gender);
-            fileWriter.Write((int)Race.ID);
-            fileWriter.Write(Culture);
-            fileWriter.Write(Profession);
-            fileWriter.Write((int)SocialStanding);
-            fileWriter.Write(PlaceOfBirth);
-            fileWriter.Write(Famility);
-            fileWriter.Write(Age);
-            fileWriter.Write(BirthDay);
-            fileWriter.Write(HairColor);
-            fileWriter.Write(EyeColor);
-            fileWriter.Write(Height);
-            fileWriter.Write(Weight);
+            fileWriter.Write(Name.Value);
+            fileWriter.Write((int)Gender.Value);
+            fileWriter.Write((int)Race.Value.ID);
+            fileWriter.Write(Culture.Value);
+            fileWriter.Write(Profession.Value);
+            fileWriter.Write((int)SocialStanding.Value);
+            fileWriter.Write(PlaceOfBirth.Value);
+            fileWriter.Write(Famility.Value);
+            fileWriter.Write(Age.Value);
+            fileWriter.Write(BirthDay.Value);
+            fileWriter.Write(HairColor.Value);
+            fileWriter.Write(EyeColor.Value);
+            fileWriter.Write(Height.Value);
+            fileWriter.Write(Weight.Value);
         }
     }
 }

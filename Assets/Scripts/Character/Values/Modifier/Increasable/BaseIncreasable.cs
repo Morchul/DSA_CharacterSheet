@@ -49,8 +49,8 @@ namespace DSA.Character.Modifier
         public BaseIncreasable(T targetValue)
         {
             this.targetValue = targetValue;
-            Name = Localization.Instance.GetLocalizedString(LocalizationKeys.INCREASABLE_NAME);
-            Description = Localization.Instance.GetLocalizedString(LocalizationKeys.INCREASABLE_DESCRIPTION);
+            //Name = Localization.Instance.GetLocalizedString(LocalizationKeys.INCREASABLE_NAME);
+            //Description = Localization.Instance.GetLocalizedString(LocalizationKeys.INCREASABLE_DESCRIPTION);
 
             maxModifiers = new List<IncreasableMaxModifier>();
 

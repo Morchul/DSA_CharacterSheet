@@ -1,6 +1,8 @@
+using DSA.Character.Value.Data;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
@@ -26,6 +28,11 @@ public class GameController : MonoBehaviour
     }
     #endregion
 
+    [Header("Localization")]
+    [SerializeField]
+    private Localization localization;
+
+    [Header("Program")]
     [SerializeField]
     [Scene]
     private string dmProgram;
@@ -43,6 +50,8 @@ public class GameController : MonoBehaviour
     private void Init()
     {
         Log.CurrentLogLevel = logLevel;
+        localization.LoadTables();
+        CharacterValueDatabase.Init(localization);
     }
 
 #if UNITY_EDITOR

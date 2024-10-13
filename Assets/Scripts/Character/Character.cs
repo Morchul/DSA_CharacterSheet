@@ -33,8 +33,8 @@ namespace DSA.Character
 
         public PersonalData PersonalData { get; private set; }
 
-        public Race Race => PersonalData.Race;
-        public string Name => PersonalData.Name;
+        public Race Race => PersonalData.Race.Value;
+        public string Name => PersonalData.Name.Value;
 
         public int XP;
 
@@ -43,7 +43,7 @@ namespace DSA.Character
             //The order in which these are called are important
             Log.Verbose("Character Awake");
 
-            PersonalData = GetComponent<PersonalData>();
+            PersonalData = new PersonalData();
 
             Log.Verbose("Start Character Value Creation");
 

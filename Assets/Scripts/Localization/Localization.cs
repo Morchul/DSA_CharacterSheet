@@ -5,46 +5,24 @@ using UnityEngine.Localization.Tables;
 public class Localization : MonoBehaviour
 {
     [SerializeField]
-    private LocalizedStringTable localizedStringTable;
+    private LocalizedStringTable characterValueTable;
 
-    private StringTable currentStringTable;
+    private StringTable characterValueStringTable;
 
-    public static Localization Instance => instance;
-    private static Localization instance;
-
-    public static LocalizedString BaseCalculationName;
-
-    private void Awake()
+    public void LoadTables()
     {
-        if(instance == null)
+        //Load Localization Table
+        characterValueStringTable = characterValueTable.GetTable();
+    }
+
+    public string GetCharacterValueText(string key)
+    {
+        StringTableEntry tableEntry = characterValueStringTable[key];
+        if(tableEntry == null)
         {
-            instance = this;
-            LoadTable();
-            SetupStaticLocalizedStrings();
+            Log.Warning($"Localization Key {key} not found!");
+            return "-";
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    private void SetupStaticLocalizedStrings()
-    {
-        BaseCalculationName = GetLocalizedString("base_calculation_name");
-    }
-
-    private void LoadTable()
-    {
-        currentStringTable = localizedStringTable.GetTable();
-    }
-
-    public string GetText(string key)
-    {
-        return currentStringTable[key].LocalizedValue;
-    }
-
-    public LocalizedString GetLocalizedString(string key)
-    {
-        return new LocalizedString(localizedStringTable.TableReference, key);
+        return tableEntry.LocalizedValue;
     }
 }

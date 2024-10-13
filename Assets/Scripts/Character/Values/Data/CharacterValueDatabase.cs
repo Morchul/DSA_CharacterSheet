@@ -10,17 +10,16 @@ namespace DSA.Character.Value.Data
 {
     public static class CharacterValueDatabase
     {
-        public static void Init(LocalizedStringTable characterValueTable)
+        public static void Init(Localization localization)
         {
             //Load Localization Table
-            StringTable stringTable = characterValueTable.GetTable();
 
-            MainAttributeDatabase.Init(stringTable);
-            SkillDatabase.Init(stringTable);
-            CombatTechnicDatabase.Init(stringTable);
-            CombatValueDatabase.Init(stringTable);
-            BaseValueDatabase.Init(stringTable);
-            PoolValueDatabase.Init(stringTable);
+            MainAttributeDatabase.Init(localization);
+            SkillDatabase.Init(localization);
+            CombatTechnicDatabase.Init(localization);
+            CombatValueDatabase.Init(localization);
+            BaseValueDatabase.Init(localization);
+            PoolValueDatabase.Init(localization);
         }
     }
 
@@ -28,18 +27,18 @@ namespace DSA.Character.Value.Data
     {
         public static MainAttributeData[] MainAttributesData;
 
-        public static void Init(StringTable localizedTable)
+        public static void Init(Localization localization)
         {
             MainAttributesData = new MainAttributeData[]
             {
-                new MainAttributeData(MainAttributeType.Courage, localizedTable["courage"].LocalizedValue, localizedTable["courage_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Sagacity, localizedTable["sagacity"].LocalizedValue, localizedTable["sagacity_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Intuition, localizedTable["intuition"].LocalizedValue, localizedTable["intuition_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Charisma, localizedTable["charisma"].LocalizedValue, localizedTable["charisma_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Dexterity, localizedTable["dexterity"].LocalizedValue, localizedTable["dexterity_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Agility, localizedTable["agility"].LocalizedValue, localizedTable["agility_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Constitution, localizedTable["constitution"].LocalizedValue, localizedTable["constitution_abbreviation"].LocalizedValue),
-                new MainAttributeData(MainAttributeType.Strength, localizedTable["strength"].LocalizedValue, localizedTable["strength_abbreviation"].LocalizedValue),
+                new MainAttributeData(MainAttributeType.Courage, localization.GetCharacterValueText("courage"), localization.GetCharacterValueText("courage_abbreviation")),
+                new MainAttributeData(MainAttributeType.Sagacity, localization.GetCharacterValueText("sagacity"), localization.GetCharacterValueText("sagacity_abbreviation")),
+                new MainAttributeData(MainAttributeType.Intuition, localization.GetCharacterValueText("intuition"), localization.GetCharacterValueText("intuition_abbreviation")),
+                new MainAttributeData(MainAttributeType.Charisma, localization.GetCharacterValueText("charisma"), localization.GetCharacterValueText("charisma_abbreviation")),
+                new MainAttributeData(MainAttributeType.Dexterity, localization.GetCharacterValueText("dexterity"), localization.GetCharacterValueText("dexterity_abbreviation")),
+                new MainAttributeData(MainAttributeType.Agility, localization.GetCharacterValueText("agility"), localization.GetCharacterValueText("agility_abbreviation")),
+                new MainAttributeData(MainAttributeType.Constitution, localization.GetCharacterValueText("constitution"), localization.GetCharacterValueText("constitution_abbreviation")),
+                new MainAttributeData(MainAttributeType.Strength, localization.GetCharacterValueText("strength"), localization.GetCharacterValueText("strength_abbreviation")),
             };
         }
 
@@ -69,85 +68,85 @@ namespace DSA.Character.Value.Data
         public static SkillData[] KnowledgeSkillData;
         public static SkillData[] CraftSkillData;
 
-        public static void Init(StringTable localizedTable)
+        public static void Init(Localization localization)
         {
             PhysicalSkillData = new SkillData[]
             {
-                new SkillData(SkillType.Flying, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Agility, IncreaseCostType.B, localizedTable["flying"].LocalizedValue),
-                new SkillData(SkillType.Gaukelei, MainAttributeType.Courage, MainAttributeType.Charisma, MainAttributeType.Dexterity, IncreaseCostType.A, localizedTable["gaukelei"].LocalizedValue),
-                new SkillData(SkillType.Climbing, MainAttributeType.Courage, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localizedTable["climbing"].LocalizedValue),
-                new SkillData(SkillType.BodyControl, MainAttributeType.Agility, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.D, localizedTable["body_control"].LocalizedValue),
-                new SkillData(SkillType.FeatOfStrength, MainAttributeType.Constitution, MainAttributeType.Strength, MainAttributeType.Strength, IncreaseCostType.B, localizedTable["feat_of_strength"].LocalizedValue),
-                new SkillData(SkillType.Riding, MainAttributeType.Charisma, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localizedTable["riding"].LocalizedValue),
-                new SkillData(SkillType.Swimming, MainAttributeType.Agility, MainAttributeType.Constitution, MainAttributeType.Strength, IncreaseCostType.B, localizedTable["swimming"].LocalizedValue),
-                new SkillData(SkillType.SelfControl, MainAttributeType.Courage, MainAttributeType.Courage, MainAttributeType.Constitution, IncreaseCostType.D, localizedTable["self_control"].LocalizedValue),
-                new SkillData(SkillType.Singing, MainAttributeType.Sagacity, MainAttributeType.Charisma, MainAttributeType.Constitution, IncreaseCostType.A, localizedTable["singing"].LocalizedValue),
-                new SkillData(SkillType.Perception, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.D, localizedTable["perception"].LocalizedValue),
-                new SkillData(SkillType.Dancing, MainAttributeType.Sagacity, MainAttributeType.Charisma, MainAttributeType.Agility, IncreaseCostType.A, localizedTable["dancing"].LocalizedValue),
-                new SkillData(SkillType.Pickpocket, MainAttributeType.Courage, MainAttributeType.Dexterity, MainAttributeType.Agility, IncreaseCostType.B, localizedTable["pickpocket"].LocalizedValue),
-                new SkillData(SkillType.Stealth, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Agility, IncreaseCostType.C, localizedTable["flying"].LocalizedValue),
-                new SkillData(SkillType.Carousing, MainAttributeType.Sagacity, MainAttributeType.Constitution, MainAttributeType.Strength, IncreaseCostType.A, localizedTable["carousing"].LocalizedValue),
+                new SkillData(SkillType.Flying, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Agility, IncreaseCostType.B, localization.GetCharacterValueText("flying")),
+                new SkillData(SkillType.Gaukelei, MainAttributeType.Courage, MainAttributeType.Charisma, MainAttributeType.Dexterity, IncreaseCostType.A, localization.GetCharacterValueText("gaukelei")),
+                new SkillData(SkillType.Climbing, MainAttributeType.Courage, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localization.GetCharacterValueText("climbing")),
+                new SkillData(SkillType.BodyControl, MainAttributeType.Agility, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.D, localization.GetCharacterValueText("body_control")),
+                new SkillData(SkillType.FeatOfStrength, MainAttributeType.Constitution, MainAttributeType.Strength, MainAttributeType.Strength, IncreaseCostType.B, localization.GetCharacterValueText("feat_of_strength")),
+                new SkillData(SkillType.Riding, MainAttributeType.Charisma, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localization.GetCharacterValueText("riding")),
+                new SkillData(SkillType.Swimming, MainAttributeType.Agility, MainAttributeType.Constitution, MainAttributeType.Strength, IncreaseCostType.B, localization.GetCharacterValueText("swimming")),
+                new SkillData(SkillType.SelfControl, MainAttributeType.Courage, MainAttributeType.Courage, MainAttributeType.Constitution, IncreaseCostType.D, localization.GetCharacterValueText("self_control")),
+                new SkillData(SkillType.Singing, MainAttributeType.Sagacity, MainAttributeType.Charisma, MainAttributeType.Constitution, IncreaseCostType.A, localization.GetCharacterValueText("singing")),
+                new SkillData(SkillType.Perception, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.D, localization.GetCharacterValueText("perception")),
+                new SkillData(SkillType.Dancing, MainAttributeType.Sagacity, MainAttributeType.Charisma, MainAttributeType.Agility, IncreaseCostType.A, localization.GetCharacterValueText("dancing")),
+                new SkillData(SkillType.Pickpocket, MainAttributeType.Courage, MainAttributeType.Dexterity, MainAttributeType.Agility, IncreaseCostType.B, localization.GetCharacterValueText("pickpocket")),
+                new SkillData(SkillType.Stealth, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Agility, IncreaseCostType.C, localization.GetCharacterValueText("flying")),
+                new SkillData(SkillType.Carousing, MainAttributeType.Sagacity, MainAttributeType.Constitution, MainAttributeType.Strength, IncreaseCostType.A, localization.GetCharacterValueText("carousing")),
             };
 
             SocialSkillData = new SkillData[]
             {
-                new SkillData(SkillType.Persuasion, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Charisma, IncreaseCostType.B, localizedTable["persuasion"].LocalizedValue),
-                new SkillData(SkillType.Seduction, MainAttributeType.Courage, MainAttributeType.Charisma, MainAttributeType.Charisma, IncreaseCostType.B, localizedTable["seduction"].LocalizedValue),
-                new SkillData(SkillType.Intimidation, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.B, localizedTable["intimidation"].LocalizedValue),
-                new SkillData(SkillType.Etiquette, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.B, localizedTable["etiquette"].LocalizedValue),
-                new SkillData(SkillType.Streetwise, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.C, localizedTable["streetwise"].LocalizedValue),
-                new SkillData(SkillType.Empathy, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.C, localizedTable["empathy"].LocalizedValue),
-                new SkillData(SkillType.FastTalk, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.C, localizedTable["fast_talk"].LocalizedValue),
-                new SkillData(SkillType.Disguise, MainAttributeType.Intuition, MainAttributeType.Charisma, MainAttributeType.Agility, IncreaseCostType.B, localizedTable["disguise"].LocalizedValue),
-                new SkillData(SkillType.Willpower, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.D, localizedTable["willpower"].LocalizedValue),
+                new SkillData(SkillType.Persuasion, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Charisma, IncreaseCostType.B, localization.GetCharacterValueText("persuasion")),
+                new SkillData(SkillType.Seduction, MainAttributeType.Courage, MainAttributeType.Charisma, MainAttributeType.Charisma, IncreaseCostType.B, localization.GetCharacterValueText("seduction")),
+                new SkillData(SkillType.Intimidation, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.B, localization.GetCharacterValueText("intimidation")),
+                new SkillData(SkillType.Etiquette, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.B, localization.GetCharacterValueText("etiquette")),
+                new SkillData(SkillType.Streetwise, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.C, localization.GetCharacterValueText("streetwise")),
+                new SkillData(SkillType.Empathy, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.C, localization.GetCharacterValueText("empathy")),
+                new SkillData(SkillType.FastTalk, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.C, localization.GetCharacterValueText("fast_talk")),
+                new SkillData(SkillType.Disguise, MainAttributeType.Intuition, MainAttributeType.Charisma, MainAttributeType.Agility, IncreaseCostType.B, localization.GetCharacterValueText("disguise")),
+                new SkillData(SkillType.Willpower, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.D, localization.GetCharacterValueText("willpower")),
             };
 
             NatureSkillData = new SkillData[]
             {
-                new SkillData(SkillType.Tracking, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Agility, IncreaseCostType.C, localizedTable["tracking"].LocalizedValue),
-                new SkillData(SkillType.Ropes, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Strength, IncreaseCostType.A, localizedTable["ropes"].LocalizedValue),
-                new SkillData(SkillType.Fishing, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.A, localizedTable["fishing"].LocalizedValue),
-                new SkillData(SkillType.Orienting, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["orienting"].LocalizedValue),
-                new SkillData(SkillType.PlantLore, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Constitution, IncreaseCostType.C, localizedTable["plant_lore"].LocalizedValue),
-                new SkillData(SkillType.AnimalLore, MainAttributeType.Courage, MainAttributeType.Courage, MainAttributeType.Charisma, IncreaseCostType.C, localizedTable["animal_lore"].LocalizedValue),
-                new SkillData(SkillType.Survival, MainAttributeType.Courage, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.C, localizedTable["survival"].LocalizedValue),
+                new SkillData(SkillType.Tracking, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Agility, IncreaseCostType.C, localization.GetCharacterValueText("tracking")),
+                new SkillData(SkillType.Ropes, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Strength, IncreaseCostType.A, localization.GetCharacterValueText("ropes")),
+                new SkillData(SkillType.Fishing, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.A, localization.GetCharacterValueText("fishing")),
+                new SkillData(SkillType.Orienting, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("orienting")),
+                new SkillData(SkillType.PlantLore, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Constitution, IncreaseCostType.C, localization.GetCharacterValueText("plant_lore")),
+                new SkillData(SkillType.AnimalLore, MainAttributeType.Courage, MainAttributeType.Courage, MainAttributeType.Charisma, IncreaseCostType.C, localization.GetCharacterValueText("animal_lore")),
+                new SkillData(SkillType.Survival, MainAttributeType.Courage, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.C, localization.GetCharacterValueText("survival")),
             };
 
             KnowledgeSkillData = new SkillData[]
             {
-                new SkillData(SkillType.Gambling, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localizedTable["gambling"].LocalizedValue),
-                new SkillData(SkillType.Geography, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["geography"].LocalizedValue),
-                new SkillData(SkillType.History, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["history"].LocalizedValue),
-                new SkillData(SkillType.Religions, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["religions"].LocalizedValue),
-                new SkillData(SkillType.Warfare, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["warfare"].LocalizedValue),
-                new SkillData(SkillType.MagicalLore, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.C, localizedTable["magical_lore"].LocalizedValue),
-                new SkillData(SkillType.Mechanics, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Dexterity, IncreaseCostType.B, localizedTable["mechanics"].LocalizedValue),
-                new SkillData(SkillType.Math, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localizedTable["math"].LocalizedValue),
-                new SkillData(SkillType.Law, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localizedTable["law"].LocalizedValue),
-                new SkillData(SkillType.MythsAndLegends, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["myths_and_legends"].LocalizedValue),
-                new SkillData(SkillType.SphereLore, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["sphere_lore"].LocalizedValue),
-                new SkillData(SkillType.Astronomy, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localizedTable["astronomy"].LocalizedValue),
+                new SkillData(SkillType.Gambling, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localization.GetCharacterValueText("gambling")),
+                new SkillData(SkillType.Geography, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("geography")),
+                new SkillData(SkillType.History, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("history")),
+                new SkillData(SkillType.Religions, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("religions")),
+                new SkillData(SkillType.Warfare, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("warfare")),
+                new SkillData(SkillType.MagicalLore, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.C, localization.GetCharacterValueText("magical_lore")),
+                new SkillData(SkillType.Mechanics, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Dexterity, IncreaseCostType.B, localization.GetCharacterValueText("mechanics")),
+                new SkillData(SkillType.Math, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localization.GetCharacterValueText("math")),
+                new SkillData(SkillType.Law, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localization.GetCharacterValueText("law")),
+                new SkillData(SkillType.MythsAndLegends, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("myths_and_legends")),
+                new SkillData(SkillType.SphereLore, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("sphere_lore")),
+                new SkillData(SkillType.Astronomy, MainAttributeType.Sagacity, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.A, localization.GetCharacterValueText("astronomy")),
             };
 
             CraftSkillData = new SkillData[]
             {
-                new SkillData(SkillType.Alchemy, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Dexterity, IncreaseCostType.C, localizedTable["alchemy"].LocalizedValue),
-                new SkillData(SkillType.Sailing, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localizedTable["sailing"].LocalizedValue),
-                new SkillData(SkillType.Driving, MainAttributeType.Charisma, MainAttributeType.Dexterity, MainAttributeType.Constitution, IncreaseCostType.A, localizedTable["driving"].LocalizedValue),
-                new SkillData(SkillType.Commerce, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.B, localizedTable["commerce"].LocalizedValue),
-                new SkillData(SkillType.TreatPoison, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localizedTable["treat_poison"].LocalizedValue),
-                new SkillData(SkillType.TreatDisease, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Constitution, IncreaseCostType.B, localizedTable["treat_disease"].LocalizedValue),
-                new SkillData(SkillType.TreatSoul, MainAttributeType.Intuition, MainAttributeType.Charisma, MainAttributeType.Constitution, IncreaseCostType.B, localizedTable["treat_soul"].LocalizedValue),
-                new SkillData(SkillType.TreatWounds, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.D, localizedTable["treat_wounds"].LocalizedValue),
-                new SkillData(SkillType.Woodworking, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localizedTable["woodworking"].LocalizedValue),
-                new SkillData(SkillType.PrepareFood, MainAttributeType.Intuition, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.A, localizedTable["prepare_food"].LocalizedValue),
-                new SkillData(SkillType.Leatherworking, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.B, localizedTable["leatherworking"].LocalizedValue),
-                new SkillData(SkillType.ArtisticAbility, MainAttributeType.Intuition, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.A, localizedTable["artistic_ability"].LocalizedValue),
-                new SkillData(SkillType.Metalworking, MainAttributeType.Dexterity, MainAttributeType.Constitution, MainAttributeType.Strength, IncreaseCostType.C, localizedTable["metalworking"].LocalizedValue),
-                new SkillData(SkillType.Music, MainAttributeType.Charisma, MainAttributeType.Dexterity, MainAttributeType.Constitution, IncreaseCostType.A, localizedTable["music"].LocalizedValue),
-                new SkillData(SkillType.PickLocks, MainAttributeType.Intuition, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.C, localizedTable["pick_locks"].LocalizedValue),
-                new SkillData(SkillType.Earthencraft, MainAttributeType.Dexterity, MainAttributeType.Dexterity, MainAttributeType.Strength, IncreaseCostType.A, localizedTable["earthencraft"].LocalizedValue),
-                new SkillData(SkillType.Clothworking, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.A, localizedTable["clothworking"].LocalizedValue),
+                new SkillData(SkillType.Alchemy, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Dexterity, IncreaseCostType.C, localization.GetCharacterValueText("alchemy")),
+                new SkillData(SkillType.Sailing, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localization.GetCharacterValueText("sailing")),
+                new SkillData(SkillType.Driving, MainAttributeType.Charisma, MainAttributeType.Dexterity, MainAttributeType.Constitution, IncreaseCostType.A, localization.GetCharacterValueText("driving")),
+                new SkillData(SkillType.Commerce, MainAttributeType.Sagacity, MainAttributeType.Intuition, MainAttributeType.Charisma, IncreaseCostType.B, localization.GetCharacterValueText("commerce")),
+                new SkillData(SkillType.TreatPoison, MainAttributeType.Courage, MainAttributeType.Sagacity, MainAttributeType.Intuition, IncreaseCostType.B, localization.GetCharacterValueText("treat_poison")),
+                new SkillData(SkillType.TreatDisease, MainAttributeType.Courage, MainAttributeType.Intuition, MainAttributeType.Constitution, IncreaseCostType.B, localization.GetCharacterValueText("treat_disease")),
+                new SkillData(SkillType.TreatSoul, MainAttributeType.Intuition, MainAttributeType.Charisma, MainAttributeType.Constitution, IncreaseCostType.B, localization.GetCharacterValueText("treat_soul")),
+                new SkillData(SkillType.TreatWounds, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.D, localization.GetCharacterValueText("treat_wounds")),
+                new SkillData(SkillType.Woodworking, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Strength, IncreaseCostType.B, localization.GetCharacterValueText("woodworking")),
+                new SkillData(SkillType.PrepareFood, MainAttributeType.Intuition, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.A, localization.GetCharacterValueText("prepare_food")),
+                new SkillData(SkillType.Leatherworking, MainAttributeType.Dexterity, MainAttributeType.Agility, MainAttributeType.Constitution, IncreaseCostType.B, localization.GetCharacterValueText("leatherworking")),
+                new SkillData(SkillType.ArtisticAbility, MainAttributeType.Intuition, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.A, localization.GetCharacterValueText("artistic_ability")),
+                new SkillData(SkillType.Metalworking, MainAttributeType.Dexterity, MainAttributeType.Constitution, MainAttributeType.Strength, IncreaseCostType.C, localization.GetCharacterValueText("metalworking")),
+                new SkillData(SkillType.Music, MainAttributeType.Charisma, MainAttributeType.Dexterity, MainAttributeType.Constitution, IncreaseCostType.A, localization.GetCharacterValueText("music")),
+                new SkillData(SkillType.PickLocks, MainAttributeType.Intuition, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.C, localization.GetCharacterValueText("pick_locks")),
+                new SkillData(SkillType.Earthencraft, MainAttributeType.Dexterity, MainAttributeType.Dexterity, MainAttributeType.Strength, IncreaseCostType.A, localization.GetCharacterValueText("earthencraft")),
+                new SkillData(SkillType.Clothworking, MainAttributeType.Sagacity, MainAttributeType.Dexterity, MainAttributeType.Dexterity, IncreaseCostType.A, localization.GetCharacterValueText("clothworking")),
             };
         }
 
@@ -173,24 +172,24 @@ namespace DSA.Character.Value.Data
     {
         public static CombatTechnicData[] CombatTechnicsData;
 
-        public static void Init(StringTable localizedTable)
+        public static void Init(Localization localization)
         {
             CombatTechnicsData = new CombatTechnicData[]
             {
-                new CombatTechnicData(CombatTechnicType.Crossbow, IncreaseCostType.B, localizedTable["crossbow"].LocalizedValue, MainAttributeType.Dexterity),
-                new CombatTechnicData(CombatTechnicType.Bow, IncreaseCostType.C, localizedTable["bow"].LocalizedValue, MainAttributeType.Dexterity),
-                new CombatTechnicData(CombatTechnicType.ThrownWeapon, IncreaseCostType.B, localizedTable["thrown_weapon"].LocalizedValue, MainAttributeType.Dexterity),
-                new CombatTechnicData(CombatTechnicType.Dagger, IncreaseCostType.B, localizedTable["dagger"].LocalizedValue, MainAttributeType.Agility),
-                new CombatTechnicData(CombatTechnicType.FencingWeapon, IncreaseCostType.C, localizedTable["fencing_weapon"].LocalizedValue, MainAttributeType.Agility),
-                new CombatTechnicData(CombatTechnicType.ImpactWeapon, IncreaseCostType.C, localizedTable["impact_weapon"].LocalizedValue, MainAttributeType.Strength),
-                new CombatTechnicData(CombatTechnicType.ChainWeapon, IncreaseCostType.C, localizedTable["chain_weapon"].LocalizedValue, MainAttributeType.Strength),
-                new CombatTechnicData(CombatTechnicType.Lance, IncreaseCostType.B, localizedTable["lance"].LocalizedValue, MainAttributeType.Strength),
-                new CombatTechnicData(CombatTechnicType.Shield, IncreaseCostType.C, localizedTable["shield"].LocalizedValue, MainAttributeType.Strength),
-                new CombatTechnicData(CombatTechnicType.TwoHandedImpactWeapon, IncreaseCostType.C, localizedTable["two_handed_impact_weapon"].LocalizedValue, MainAttributeType.Strength),
-                new CombatTechnicData(CombatTechnicType.TwoHandedSword, IncreaseCostType.C, localizedTable["two_handed_sword"].LocalizedValue, MainAttributeType.Strength),
-                new CombatTechnicData(CombatTechnicType.Brawling, IncreaseCostType.B, localizedTable["brawling"].LocalizedValue, MainAttributeType.Strength, MainAttributeType.Agility),
-                new CombatTechnicData(CombatTechnicType.Sword, IncreaseCostType.C, localizedTable["sword"].LocalizedValue, MainAttributeType.Strength, MainAttributeType.Agility),
-                new CombatTechnicData(CombatTechnicType.PoleWeapon, IncreaseCostType.C, localizedTable["pole_weapon"].LocalizedValue, MainAttributeType.Strength, MainAttributeType.Agility),
+                new CombatTechnicData(CombatTechnicType.Crossbow, IncreaseCostType.B, localization.GetCharacterValueText("crossbows"), MainAttributeType.Dexterity),
+                new CombatTechnicData(CombatTechnicType.Bow, IncreaseCostType.C, localization.GetCharacterValueText("bows"), MainAttributeType.Dexterity),
+                new CombatTechnicData(CombatTechnicType.ThrownWeapon, IncreaseCostType.B, localization.GetCharacterValueText("thrown_weapons"), MainAttributeType.Dexterity),
+                new CombatTechnicData(CombatTechnicType.Dagger, IncreaseCostType.B, localization.GetCharacterValueText("daggers"), MainAttributeType.Agility),
+                new CombatTechnicData(CombatTechnicType.FencingWeapon, IncreaseCostType.C, localization.GetCharacterValueText("fencing_weapons"), MainAttributeType.Agility),
+                new CombatTechnicData(CombatTechnicType.ImpactWeapon, IncreaseCostType.C, localization.GetCharacterValueText("impact_weapons"), MainAttributeType.Strength),
+                new CombatTechnicData(CombatTechnicType.ChainWeapon, IncreaseCostType.C, localization.GetCharacterValueText("chain_weapons"), MainAttributeType.Strength),
+                new CombatTechnicData(CombatTechnicType.Lance, IncreaseCostType.B, localization.GetCharacterValueText("lances"), MainAttributeType.Strength),
+                new CombatTechnicData(CombatTechnicType.Shield, IncreaseCostType.C, localization.GetCharacterValueText("shields"), MainAttributeType.Strength),
+                new CombatTechnicData(CombatTechnicType.TwoHandedImpactWeapon, IncreaseCostType.C, localization.GetCharacterValueText("two_handed_impact_weapons"), MainAttributeType.Strength),
+                new CombatTechnicData(CombatTechnicType.TwoHandedSword, IncreaseCostType.C, localization.GetCharacterValueText("two_handed_swords"), MainAttributeType.Strength),
+                new CombatTechnicData(CombatTechnicType.Brawling, IncreaseCostType.B, localization.GetCharacterValueText("brawling"), MainAttributeType.Strength, MainAttributeType.Agility),
+                new CombatTechnicData(CombatTechnicType.Sword, IncreaseCostType.C, localization.GetCharacterValueText("swords"), MainAttributeType.Strength, MainAttributeType.Agility),
+                new CombatTechnicData(CombatTechnicType.PoleWeapon, IncreaseCostType.C, localization.GetCharacterValueText("pole_weapons"), MainAttributeType.Strength, MainAttributeType.Agility),
             };
         }
 
@@ -224,7 +223,7 @@ namespace DSA.Character.Value.Data
     {
         public static CombatValueData[] CombatValuesData;
 
-        public static void Init(StringTable localizedTable)
+        public static void Init(Localization localization)
         {
             ICombatValueBaseCalculationFactory rangedCalculationFactory = new RangedValueCalculationFactory();
             ICombatValueBaseCalculationFactory attackCalculationFactory = new AttackValueCalculationFactory();
@@ -282,15 +281,15 @@ namespace DSA.Character.Value.Data
     {
         public static BaseValueData[] BaseValuesData;
 
-        public static void Init(StringTable localizedTable)
+        public static void Init(Localization localization)
         {
             BaseValuesData = new BaseValueData[]
             {
-                new BaseValueData(BaseValueType.Dodge, new DodgeCalculationFactory(), localizedTable["dodge"].LocalizedValue, localizedTable["dodge_abbreviation"].LocalizedValue),
-                new BaseValueData(BaseValueType.Initative, new InitiativeCalculationFactory(), localizedTable["initiative"].LocalizedValue, localizedTable["initiative_abbreviation"].LocalizedValue),
-                new BaseValueData(BaseValueType.Movement, new MovementCalculationFactory(), localizedTable["movement"].LocalizedValue, localizedTable["movement_abbreviation"].LocalizedValue),
-                new BaseValueData(BaseValueType.Spirit, new SpiritCalculationFactory(), localizedTable["spirit"].LocalizedValue, localizedTable["spirit_abbreviation"].LocalizedValue),
-                new BaseValueData(BaseValueType.Toughness, new ToughnessCalculationFactory(), localizedTable["toughness"].LocalizedValue, localizedTable["toughness_abbreviation"].LocalizedValue),
+                new BaseValueData(BaseValueType.Dodge, new DodgeCalculationFactory(), localization.GetCharacterValueText("dodge"), localization.GetCharacterValueText("dodge_abbreviation")),
+                new BaseValueData(BaseValueType.Initative, new InitiativeCalculationFactory(), localization.GetCharacterValueText("initiative"), localization.GetCharacterValueText("initiative_abbreviation")),
+                new BaseValueData(BaseValueType.Movement, new MovementCalculationFactory(), localization.GetCharacterValueText("movement"), "-"),
+                new BaseValueData(BaseValueType.Spirit, new SpiritCalculationFactory(), localization.GetCharacterValueText("spirit"), localization.GetCharacterValueText("spirit_abbreviation")),
+                new BaseValueData(BaseValueType.Toughness, new ToughnessCalculationFactory(), localization.GetCharacterValueText("toughness"), localization.GetCharacterValueText("toughness_abbreviation")),
             };
         }
 
@@ -317,13 +316,13 @@ namespace DSA.Character.Value.Data
     {
         public static PoolValueData[] PoolValuesData;
 
-        public static void Init(StringTable localizedTable)
+        public static void Init(Localization localization)
         {
             PoolValuesData = new PoolValueData[]
             {
-                new PoolValueData(PoolValueType.ArcaneEnergy, localizedTable["arcane_energy"].LocalizedValue),
-                new PoolValueData(PoolValueType.KarmaPoints, localizedTable["karma_points"].LocalizedValue),
-                new PoolValueData(PoolValueType.LifePoints, localizedTable["life_points"].LocalizedValue),
+                new PoolValueData(PoolValueType.ArcaneEnergy, "-"),
+                new PoolValueData(PoolValueType.KarmaPoints, "-"),
+                new PoolValueData(PoolValueType.LifePoints, localization.GetCharacterValueText("life_points")),
             };
         }
 

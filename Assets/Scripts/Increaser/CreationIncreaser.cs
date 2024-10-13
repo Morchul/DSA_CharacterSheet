@@ -11,8 +11,7 @@ public class CreationIncreaser : BaseIncreaser
         this.experienceLevel = experienceLevel;
     }
 
-    public override bool AllowEditOfAdvantages => true;
-    public override bool AllowFinishWithWarnings => false;
+    public override IIncreaserPermissions Permissions => IIncreaserPermissions.EditAdvantages | IIncreaserPermissions.EditPersonalData;
 
     protected override bool CanBeIncreased(IIncreasable increasable)
     {

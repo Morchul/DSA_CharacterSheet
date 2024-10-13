@@ -1,0 +1,14 @@
+.editable-field{
+	min-width: 200px;
+	height: 40px;
+	flex-grow: 1;
+}
+
+.editable-field-textfield{
+	position: absolute;
+	font-size: 24px;
+}
+
+.editable-field-label{
+	font-size: 24px;
+}

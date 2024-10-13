@@ -4,8 +4,7 @@ public class GodIncreaser : BaseIncreaser
 {
     private bool applyXP;
 
-    public override bool AllowEditOfAdvantages => true;
-    public override bool AllowFinishWithWarnings => true;
+    public override IIncreaserPermissions Permissions => IIncreaserPermissions.EditAdvantages | IIncreaserPermissions.EditPersonalData | IIncreaserPermissions.FinishWithWarnings;
 
     public GodIncreaser(bool applyXP)
     {

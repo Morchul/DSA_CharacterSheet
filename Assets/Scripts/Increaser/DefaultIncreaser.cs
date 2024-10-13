@@ -2,8 +2,7 @@ using DSA.Character.Modifier;
 
 public class DefaultIncreaser : BaseIncreaser
 {
-    public override bool AllowEditOfAdvantages => false;
-    public override bool AllowFinishWithWarnings => false;
+    public override IIncreaserPermissions Permissions => IIncreaserPermissions.EditPersonalData;
 
     public DefaultIncreaser()
     {

@@ -10,8 +10,7 @@ public abstract class BaseIncreaser : IIncreaser
     public event System.Action OnIncreaserUpdate;
     private int startXP;
 
-    public abstract bool AllowEditOfAdvantages { get; }
-    public abstract bool AllowFinishWithWarnings { get; }
+    public abstract IIncreaserPermissions Permissions { get; }
 
     public BaseIncreaser()
     {
@@ -44,6 +43,11 @@ public abstract class BaseIncreaser : IIncreaser
         character.XP = startXP;
 
         Apply();
+    }
+
+    public bool IsAllowed(IIncreaserPermissions increserPermissions)
+    {
+        return (Permissions & increserPermissions) == increserPermissions;
     }
 
     public IncreaseData CheckValue(IIncreasable increasable)
@@ -129,5 +133,4 @@ public abstract class BaseIncreaser : IIncreaser
     protected virtual bool CanBeDecreased(IIncreasable increasable) => increasable.CanBeDecreased;
     protected virtual int GetIncreaseCost(IIncreasable increasable) => Utility.GetIncreaseCost(increasable.IncreaseCostType, increasable.IncreaseValue + 1);
     protected virtual int GetDecreaseRefund(IIncreasable increasable) => Utility.GetIncreaseCost(increasable.IncreaseCostType, increasable.IncreaseValue);
-
 }
